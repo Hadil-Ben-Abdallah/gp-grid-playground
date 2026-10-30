@@ -369,8 +369,6 @@ function makeColumns(options?: {
   ];
 
   if (!options?.showDepartment) {
-    // Department stays available in the data for the analytics demo.
-    // The field is hidden from the default column list.
     const departmentColumn = columns.find(
       (column) => column.field === 'department',
     );
@@ -385,7 +383,6 @@ function makeColumns(options?: {
   return columns;
 }
 
-// Native pivot configuration for Demo 7.
 const pivotConfig = {
   rows: [{ field: 'department' }],
   pivots: [{ field: 'status' }],
@@ -424,7 +421,6 @@ function App() {
   const [streamCount, setStreamCount] = useState(0);
   const [lastUpdate, setLastUpdate] = useState('Waiting for updates');
 
-  // Stable base data: toggling the theme does not regenerate the dataset.
   const baseRows = useMemo(() => generateRowData(15000), []);
 
   // Generate the million-row dataset only when that demo is selected.
@@ -455,9 +451,6 @@ function App() {
     [activeRows],
   );
 
-  // This demonstrates the grid's paginated DataSource contract using an
-  // asynchronous in-memory API. Replace this query with fetch('/api/grid-data')
-  // when your demo environment has a real backend endpoint.
   const serverDataSource = useMemo(
     () =>
       createServerDataSource(async (request) => {
@@ -474,7 +467,6 @@ function App() {
     [baseRows],
   );
 
-  // Native row grouping with employee count, total salary, and average score.
   const grouping = useMemo(
     () =>
       createRowGrouping({
@@ -490,7 +482,6 @@ function App() {
     [],
   );
 
-  // Native pivot source: department rows, status columns, salary and score measures.
   const pivotSource = useMemo(
     () => createPivotSource(createClientDataSource(baseRows), pivotConfig),
     [baseRows],
