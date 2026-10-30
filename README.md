@@ -101,7 +101,6 @@ Explore gp-grid's data organization capabilities:
 - **Vite**
 - **CSS**
 - **gp-grid**
-- **React Select**
 
 ---
 
