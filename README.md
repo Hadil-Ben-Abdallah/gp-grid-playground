@@ -1,5 +1,5 @@
  
-<h1 align="center">🚀 gp-grid Playground</h1>
+<h1 align="center">gp-grid Playground 🔥</h1>
 
 An interactive React playground showcasing [gp-grid](https://gp-grid.io/). The project was created as a hands-on experiment to explore gp-grid in a React application through seven focused demos covering virtual scrolling, sorting, filtering, selection, inline editing, custom cell renderers, live data updates, column layouts, row grouping, and pivoting.
 
